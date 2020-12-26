@@ -1,20 +1,31 @@
-package coms.ustc.sse.xdclass.domain;
+package coms.ustc.sse.xdclass.model.entity;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Date;
 
+/**
+ * `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+ *   `name` varchar(128) DEFAULT NULL COMMENT '昵称',
+ *   `pwd` varchar(124) DEFAULT NULL COMMENT '密码',
+ *   `head_img` varchar(524) DEFAULT NULL COMMENT '头像',
+ *   `phone` varchar(64) DEFAULT '' COMMENT '手机号',
+ *   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+ */
 public class User {
-    private long id;
+    private Integer id;
     private String name;
+    @JsonIgnore
     private String pwd;
     private String headImg;
     private String phone;
     private Date createTime;
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -56,5 +67,17 @@ public class User {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", headImg='" + headImg + '\'' +
+                ", phone='" + phone + '\'' +
+                ", createTime=" + createTime +
+                '}';
     }
 }

@@ -1,6 +1,7 @@
-package coms.ustc.sse.xdclass.domain;
+package coms.ustc.sse.xdclass.model.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class Video {
     private Integer id;
@@ -10,6 +11,15 @@ public class Video {
     private Integer price;
     private Date createTime;
     private Double point;
+    private List<Chapter> chapters;
+
+    public List<Chapter> getChapters() {
+        return chapters;
+    }
+
+    public void setChapters(List<Chapter> chapters) {
+        this.chapters = chapters;
+    }
 
     public Integer getId() {
         return id;
@@ -77,6 +87,7 @@ public class Video {
                 ", price=" + price +
                 ", createTime=" + createTime +
                 ", point=" + point +
+                ", chapters=" + chapters +
                 '}';
     }
 }
